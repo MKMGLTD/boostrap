@@ -287,27 +287,32 @@ ul, ol {
 }
 
 /* Show the selected image */
-#thumb1:checked ~ .gallery-main-container img.img1 {
+#thumb1:checked ~ .gallery-main-container .img1 {
   display: block;
 }
-#thumb2:checked ~ .gallery-main-container img.img2 {
+#thumb2:checked ~ .gallery-main-container .img2 {
   display: block;
 }
-#thumb3:checked ~ .gallery-main-container img.img3 {
+#thumb3:checked ~ .gallery-main-container .img3 {
   display: block;
 }
-#thumb4:checked ~ .gallery-main-container img.img4 {
+#thumb4:checked ~ .gallery-main-container .img4 {
   display: block;
 }
-#thumb5:checked ~ .gallery-main-container img.img5 {
+#thumb5:checked ~ .gallery-main-container .img5 {
   display: block;
 }
-#thumb6:checked ~ .gallery-main-container img.img6 {
+#thumb6:checked ~ .gallery-main-container .img6 {
   display: block;
 }
 
 .gallery-main-container img {
   display: none;
+}
+
+/* First image is displayed by default */
+.gallery-main-container .img1 {
+  display: block;
 }
 
 /* Vehicle Donor Section - Dark Theme */
@@ -379,12 +384,14 @@ ul, ol {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
 }
 
+/* Adjusted category box size to ensure all three fit on one row */
 .category-box {
-  flex: 1 0 calc(33.333% - 20px);
-  min-width: 280px;
+  flex: 0 0 calc(33% - 10px);
+  min-width: 200px;
+  max-width: 32%;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0,0,0,0.3);
@@ -405,18 +412,18 @@ ul, ol {
 
 .category-header h3 {
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   color: white;
 }
 
 .category-content {
-  padding: 20px;
+  padding: 15px;
   background-color: #222;
 }
 
 .category-image {
   width: 100%;
-  height: 150px;
+  height: 120px;
   object-fit: cover;
   margin-bottom: 15px;
   border-radius: 4px;
@@ -429,8 +436,8 @@ ul, ol {
 }
 
 .category-links li {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
   border-bottom: 1px solid #444;
 }
 
@@ -444,17 +451,18 @@ ul, ol {
   display: block;
   color: #ddd;
   text-decoration: none;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-radius: 4px;
   transition: all 0.3s;
   background-color: #333;
   border-left: 3px solid #3498db;
+  font-size: 14px;
 }
 
 .category-links a:hover {
   background-color: #444;
   color: #3498db;
-  padding-left: 15px;
+  padding-left: 12px;
 }
 
 /* Policy Table - Dark Theme */
@@ -712,7 +720,8 @@ ul, ol {
   }
   
   .category-box {
-    flex: 1 0 calc(50% - 20px);
+    flex: 1 0 calc(50% - 10px);
+    max-width: 48%;
   }
   
   .footer-column {
@@ -740,6 +749,7 @@ ul, ol {
   
   .category-box, .footer-column, .why-us-feature {
     flex: 1 0 100%;
+    max-width: 100%;
   }
   
   .gallery-thumb {
